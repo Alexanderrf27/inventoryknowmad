@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "5ee134a1-dc8c-4328-98a2-43575f07615f",
+		"name": "knowmadTestAlexPostman",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5933729"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/products/v1/priceLast",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"brandId\":1, \n    \"productId\":35455, \n    \"appDate\":\"2020-06-14T10:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/products/v1/priceLast",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products",
+						"v1",
+						"priceLast"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

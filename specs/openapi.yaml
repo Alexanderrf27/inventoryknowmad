@@ -1,0 +1,80 @@
+openapi: 3.0.1
+info:
+  title: Test and exercise for knowmadmood
+  description: In the company's e-commerce database we have the PRICES table that reflects the final price (pvp) and the rate that applies to a product in a chain between certain dates
+  termsOfService: http://swagger.io/terms/
+  license:
+    name: Apache 2.0
+    url: http://springdoc.org
+  version: '0.1'
+servers:
+  - url: http://localhost:8080
+    description: Generated server url
+paths:
+  /products/v1/priceLast:
+    post:
+      tags:
+        - product-api-delegate
+      description: In the company's e-commerce database we have the PRICES table that reflects the final price (pvp) and the rate that applies to a product in a chain between certain dates
+      operationId: getPriceLast
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProductsPriceLast'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/ProductsPriceLastResponse'
+components:
+  schemas:
+    ProductsPriceLast:
+      required:
+        - appDate
+        - brandId
+        - productId
+      type: object
+      properties:
+        brandId:
+          maximum: 1
+          minimum: 1
+          type: integer
+          description: Group chain id (1 = ZARA)
+          format: int64
+        productId:
+          maximum: 6
+          minimum: 5
+          type: integer
+          description: Represents product identifier
+          format: int64
+        appDate:
+          type: string
+          description: Represents application date
+          format: date-time
+    ProductsPriceLastResponse:
+      type: object
+      properties:
+        productId:
+          type: integer
+          description: Represents product identifier
+          format: int64
+        brandId:
+          type: integer
+          description: Group chain id (1 = ZARA)
+          format: int64
+        rateToApply:
+          type: integer
+          description: rate to apply to the product
+          format: int64
+        priceApplicationDates:
+          type: string
+          description: product price application dates
+          format: date-time
+        finalPrice:
+          type: number
+          description: final Price application
+          format: double

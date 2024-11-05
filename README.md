@@ -8,7 +8,7 @@ In the company's e-commerce database we have the PRICES table that reflects the 
 a chain between certain dates. Below is an example of the table with the relevant fields:
 
 
-[link text](postman/knowmadmoodTestAlexPostman.postman_collection.json)
+[link text](postman/knowmadTestAlexPostman.postman_collection.json)
 
 
 
